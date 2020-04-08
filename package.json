@@ -11,7 +11,8 @@
     "lint": "eslint src/**/*.js",
     "start": "node ./build/index.js",
     "start-dev": "babel-node ./src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
