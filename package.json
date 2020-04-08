@@ -1,0 +1,67 @@
+{
+  "name": "express-app",
+  "version": "1.0.0",
+  "description": "A base express app with configuration support for your API or web app",
+  "main": "build/index.js",
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "build": "babel ./src --out-dir build",
+    "lint": "eslint src/**/*.js",
+    "start": "node ./build/index.js",
+    "start-dev": "babel-node ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhruv-m-patel/express-app.git"
+  },
+  "keywords": [
+    "express",
+    "configuration",
+    "middleware"
+  ],
+  "author": "Dhruv Patel <dhruv.codelab@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dhruv-m-patel/express-app/issues"
+  },
+  "homepage": "https://github.com/dhruv-m-patel/express-app#readme",
+  "dependencies": {
+    "@babel/runtime": "^7.9.2",
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "confit": "^3.0.0",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "fetch-everywhere": "^1.0.5",
+    "meddleware": "^3.0.3",
+    "morgan": "^1.10.0",
+    "shortstop-handlers": "^1.0.1",
+    "shortstop-regex": "0.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.9.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-syntax-optional-chaining": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-macros": "^2.8.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.2.3"
+  }
+}

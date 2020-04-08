@@ -1,0 +1,59 @@
+{
+  "port": 8080,
+  "trustProxy": true,
+  "logging": {
+    "format": "combined",
+    "options": {}
+  },
+  "meddleware": {
+    "logger": {
+      "priority": 20,
+      "module": {
+        "name": "morgan",
+        "arguments": [
+          "config:logging.format",
+          "config:logging.options"
+        ]
+      }
+    },
+    "static": {
+      "priority": 21,
+      "module": {
+        "name": "express",
+        "method": "static",
+        "arguments": [
+          "path:./static"
+        ]
+      }
+    },
+    "cookie": {
+      "priority": 22,
+      "module": {
+        "name": "cookie-parser"
+      }
+    },
+    "jsonBody": {
+      "priority": 23,
+      "module": {
+        "name": "body-parser",
+        "method": "json"
+      }
+    },
+    "formBody": {
+      "priority": 24,
+      "module": {
+        "name": "body-parser",
+        "method": "urlencoded",
+        "arguments": [
+          { "extended": true }
+        ]
+      }
+    },
+    "gzipCompression": {
+      "priority": 25,
+      "module": {
+        "name": "compression"
+      }
+    }
+  }
+}
