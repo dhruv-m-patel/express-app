@@ -67,7 +67,7 @@ export default class ExpressApp {
   }
 
   async start() {
-    this.configureApp();
+    await this.configureApp();
 
     return new Promise((resolve, reject) => {
       try {
