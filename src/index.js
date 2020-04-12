@@ -46,7 +46,7 @@ export default class ExpressApp {
     this.configurations.push(configFactory);
   }
 
-  async start() {
+  async configureApp() {
     const config = this.config = await this.configure();
     if (config.get('trustProxy')) {
       this.app.enable('trust proxy');
@@ -64,16 +64,27 @@ export default class ExpressApp {
     if (middleware) {
       this.app.use(meddleware(middleware));
     }
+  }
+
+  async start() {
+    this.configureApp();
 
     return new Promise((resolve, reject) => {
-      const port = ['staging', 'production'].includes(process.env.NODE_ENV) ? process.env.PORT : this.config.get('port');
-      this.server.listen(port, () => {
-        resolve(port);
-      });
+      try {
+        const port = ['staging', 'production'].includes(process.env.NODE_ENV) ? process.env.PORT : this.config.get('port');
+        this.server.listen(port, () => {
+          resolve(port);
+        });
+      } catch (err) {
+        console.error(`App failed to start: ${err.message}`, err.stack);
+        reject(err);
+      }
     });
   }
 
-  stop(callback) {
-    this.server.close(callback);
+  async stop(callback) {
+    this.server.close(() => {
+      callback();
+    });
   }
 }
