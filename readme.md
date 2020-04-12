@@ -17,7 +17,7 @@ $ npm run start-dev
 - Install the package:
 
   ```
-  npm install @dhruv-m-patel/express-app
+  $ npm install https://github.com/dhruv-m-patel/express-app.git#v1.0.0
   ```
 
 - Import the app
@@ -49,7 +49,7 @@ You can add new middleware following [`meddleware` package documentation](https:
 Install express-enrouten:
 
 ```
-npm install express-enrouten -S
+$ npm install express-enrouten -S
 ```
 
 Edit `config/config.js` in your application adding following block of code in `meddleware` section:
