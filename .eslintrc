@@ -7,6 +7,16 @@
   "rules": {
     "semi": [0],
     "space-before-function-paren": [0],
-    "comma-dangle": [0]
+    "comma-dangle": [0],
+    "no-unused-vars": [
+      "error",
+      {
+        "varsIgnorePattern": "should|expect"
+      }
+    ],
+    "handle-callback-err": "off"
+  },
+  "env": {
+    "mocha": true
   }
 }
